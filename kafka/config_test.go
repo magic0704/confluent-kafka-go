@@ -50,7 +50,7 @@ func TestConfigMapAPIs(t *testing.T) {
 	}
 
 	// test boolean type
-	err = config.SetKey("{topic}.produce.offset.report", true)
+	err = config.SetKey("{topic}.enable.auto.offset.store", true)
 	if err != nil {
 		t.Errorf("Failed to set key via SetKey(). Error: %s\n", err)
 	}

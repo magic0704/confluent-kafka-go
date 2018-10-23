@@ -874,7 +874,6 @@ func TestProducerConsumerTimestamps(t *testing.T) {
 	 * Create producer and produce one recognizable message with timestamp
 	 */
 	t.Logf("Creating producer")
-	conf.SetKey("{topic}.produce.offset.report", true)
 	p, err := NewProducer(&conf)
 	if err != nil {
 		t.Fatalf("NewProducer: %v", err)

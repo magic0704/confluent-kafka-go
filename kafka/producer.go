@@ -414,12 +414,6 @@ func NewProducer(conf *ConfigMap) (*Producer, error) {
 	}
 	produceChannelSize := v.(int)
 
-	v, _ = confCopy.extract("{topic}.produce.offset.report", nil)
-	if v == nil {
-		// Enable offset reporting by default, unless overriden.
-		confCopy.SetKey("{topic}.produce.offset.report", true)
-	}
-
 	// Convert ConfigMap to librdkafka conf_t
 	cConf, err := confCopy.convert()
 	if err != nil {
